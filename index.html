@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catholic Biblical Prompt Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <div id="video-background">
+        <video autoplay muted loop id="my-video">
+            <source src="https://github.com/DreamSinn/religprompt/raw/refs/heads/main/video/pequeno.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- Overlay Content -->
+    <div class="container">
+        <header>
+            <h1>Catholic Biblical Prompt Generator</h1>
+            <p>Create inspiring scenes with themes from the Catholic faith.</p>
+        </header>
+
+        <!-- Area where the generated prompt will be displayed -->
+        <div id="prompt-area">Your generated prompt will appear here.</div>
+
+        <!-- Area for the generated title -->
+        <div class="input-group title-group">
+            <label for="generated-title">
+                <i class="fas fa-heading"></i> Generated Title:
+            </label>
+            <textarea id="generated-title" readonly></textarea>
+        </div>
+
+        <!-- Area for Negative Prompts -->
+        <div class="input-group negative-prompt-group">
+            <label for="negative-prompt">
+                <i class="fas fa-scroll"></i> Negative Prompts:
+            </label>
+            <textarea id="negative-prompt" placeholder="Enter terms to exclude"></textarea>
+        </div>
+
+        <!-- Button to generate the prompt -->
+        <div class="button-container">
+            <button id="generate-button">Generate Prompt</button>
+        </div>
+    </div>
+
+    <!-- Copy Notification -->
+    <div id="notification" class="notification">Prompt copied to clipboard!</div>
+
+    <script src="app.js"></script>
+</body>
+</html>

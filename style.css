@@ -1,0 +1,206 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'MedievalSharp', cursive;
+    color: #FFFFFF; /* Branco */
+}
+
+/* Vídeo de fundo */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* Contêiner principal */
+.container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro para contrastar com o branco */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    margin: 20px auto;
+}
+
+/* Título */
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #FFD700; /* Dourado */
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #FFFFFF; /* Branco */
+    margin-bottom: 20px;
+}
+
+/* Área do prompt */
+#prompt-area {
+    padding: 20px;
+    border: 2px solid #FFD700; /* Dourado */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco translúcido */
+    font-family: 'Courier New', monospace;
+    color: #FFFFFF; /* Branco */
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: glow 3s infinite;
+    height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+    background-blend-mode: overlay;
+}
+
+/* Animação de brilho */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #FFD700; }
+    50% { box-shadow: 0 0 20px #FFD700; }
+    100% { box-shadow: 0 0 10px #FFD700; }
+}
+
+/* Botão */
+button {
+    padding: 10px 20px;
+    background-color: #FFD700; /* Dourado */
+    color: #000000; /* Preto para contraste */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #FFC200; /* Dourado mais claro */
+    transform: scale(1.05);
+}
+
+/* Grupo de entrada para o título gerado */
+.title-group {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-group label {
+    font-size: 1.1rem;
+    color: #FFD700; /* Dourado */
+    text-shadow: 0 0 5px #FFD700;
+    margin-bottom: 10px;
+}
+
+.title-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #FFD700; /* Dourado */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco translúcido */
+    color: #FFFFFF; /* Branco */
+    font-size: 14px;
+    resize: none; /* Impede o redimensionamento */
+    min-height: 60px;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+    background-blend-mode: overlay;
+    cursor: pointer; /* Indica que é clicável */
+}
+
+.title-group textarea:focus {
+    border-color: #FFFFFF; /* Branco */
+    box-shadow: 0 0 10px #FFFFFF;
+}
+
+.title-group textarea:hover {
+    transform: scale(1.02);
+}
+
+/* Grupo de entrada para Negative Prompts */
+.negative-prompt-group {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.negative-prompt-group label {
+    font-size: 1.1rem;
+    color: #FFD700; /* Dourado */
+    text-shadow: 0 0 5px #FFD700;
+    margin-bottom: 10px;
+}
+
+.negative-prompt-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #FFD700; /* Dourado */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco translúcido */
+    color: #FFFFFF; /* Branco */
+    font-size: 14px;
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+    background-blend-mode: overlay;
+}
+
+.negative-prompt-group textarea:focus {
+    border-color: #FFFFFF; /* Branco */
+    box-shadow: 0 0 10px #FFFFFF;
+}
+
+.negative-prompt-group textarea:hover {
+    transform: scale(1.02);
+}
+
+/* Notificação */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFD700; /* Dourado */
+    color: #000000; /* Preto para contraste */
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    font-size: 14px;
+    z-index: 1000;
+}
